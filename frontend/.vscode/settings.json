@@ -5,5 +5,10 @@
     "titleBar.activeBackground": "#FFC600",
     "titleBar.inactiveBackground": "#FFC600CC"
   },
-  "editor.tabSize": 2
+  "editor.tabSize": 2,
+  "editor.formatOnSave": false,
+  "[javascript]": {
+    "editor.formatOnSave": true
+  },
+  "prettier.singleQuote": true
 }
