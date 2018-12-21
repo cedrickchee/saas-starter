@@ -10,5 +10,6 @@
   "[javascript]": {
     "editor.formatOnSave": true
   },
-  "prettier.singleQuote": true
+  "prettier.singleQuote": true,
+  "emmet.triggerExpansionOnTab": true
 }
