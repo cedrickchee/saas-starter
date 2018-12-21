@@ -1,8 +1,8 @@
 {
-  "name": "sick-fits-frontend",
+  "name": "saas-starter-frontend",
   "version": "1.0.0",
   "private": true,
-  "description": "Sick Fits! An example React, GraphQL, Next and Apollo",
+  "description": "SaaS Starter is a fullstack starter kit build using React, GraphQL, Next and Apollo",
   "main": "index.js",
   "scripts": {
     "dev": "next -p 7777",
