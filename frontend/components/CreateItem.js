@@ -34,11 +34,35 @@ class CreateItem extends Component {
     largeImage: 'large-dog.jpg',
     price: 10
   };
+
   handleChange = e => {
     const { name, type, value } = e.target;
     const val = type == 'number' ? parseFloat(value) : value;
     this.setState({ [name]: val });
   };
+
+  uploadFile = async e => {
+    console.log('uploading file...');
+    const files = e.target.files;
+    const data = new FormData();
+    data.append('file', files[0]);
+    data.append('upload_preset', 'saas-starter');
+
+    const res = await fetch(
+      'https://api.cloudinary.com/v1_1/cedrickchee/image/upload',
+      {
+        method: 'POST',
+        body: data
+      }
+    );
+    const file = await res.json();
+    console.log(file);
+    this.setState({
+      image: file.secure_url,
+      largeImage: file.eager[0].secure_url
+    });
+  };
+
   render() {
     return (
       <Mutation mutation={CREATE_ITEM_MUTATION} variables={this.state}>
@@ -59,6 +83,24 @@ class CreateItem extends Component {
           >
             <Error error={error} />
             <fieldset disabled={loading} aria-busy={loading}>
+              <label htmlFor="file">
+                Image
+                <input
+                  type="file"
+                  id="file"
+                  name="file"
+                  placeholder="Upload an image"
+                  required
+                  onChange={this.uploadFile}
+                />
+                {this.state.image && (
+                  <img
+                    width="200"
+                    src={this.state.image}
+                    alt="Upload Preview"
+                  />
+                )}
+              </label>
               <label htmlFor="title">
                 Title
                 <input
