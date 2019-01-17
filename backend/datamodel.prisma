@@ -12,7 +12,7 @@ type User {
   name: String!
   email: String! @unique
   password: String!
-  resetTokem: String
+  resetToken: String
   resetTokenExpiry: Float
   permissions: [Permission]
 }
