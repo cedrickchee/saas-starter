@@ -1,5 +1,5 @@
 # source: https://us1.prisma.sh/cedric/saas-starter/dev
-# timestamp: Sun Apr 21 2019 18:41:57 GMT+0800 (Singapore Standard Time)
+# timestamp: Mon Apr 22 2019 01:31:32 GMT+0800 (Singapore Standard Time)
 
 type AggregateCartItem {
   count: Int!
@@ -816,6 +816,8 @@ type Order implements Node {
   total: Int!
   user: User!
   charge: String!
+  createdAt: DateTime!
+  updatedAt: DateTime!
 }
 
 """A connection to a list of items."""
@@ -1545,12 +1547,18 @@ enum OrderOrderByInput {
   total_DESC
   charge_ASC
   charge_DESC
+  createdAt_ASC
+  createdAt_DESC
+  updatedAt_ASC
+  updatedAt_DESC
 }
 
 type OrderPreviousValues {
   id: ID!
   total: Int!
   charge: String!
+  createdAt: DateTime!
+  updatedAt: DateTime!
 }
 
 type OrderSubscriptionPayload {
@@ -1715,6 +1723,50 @@ input OrderWhereInput {
 
   """All values not ending with the given string."""
   charge_not_ends_with: String
+  createdAt: DateTime
+
+  """All values that are not equal to given value."""
+  createdAt_not: DateTime
+
+  """All values that are contained in given list."""
+  createdAt_in: [DateTime!]
+
+  """All values that are not contained in given list."""
+  createdAt_not_in: [DateTime!]
+
+  """All values less than the given value."""
+  createdAt_lt: DateTime
+
+  """All values less than or equal the given value."""
+  createdAt_lte: DateTime
+
+  """All values greater than the given value."""
+  createdAt_gt: DateTime
+
+  """All values greater than or equal the given value."""
+  createdAt_gte: DateTime
+  updatedAt: DateTime
+
+  """All values that are not equal to given value."""
+  updatedAt_not: DateTime
+
+  """All values that are contained in given list."""
+  updatedAt_in: [DateTime!]
+
+  """All values that are not contained in given list."""
+  updatedAt_not_in: [DateTime!]
+
+  """All values less than the given value."""
+  updatedAt_lt: DateTime
+
+  """All values less than or equal the given value."""
+  updatedAt_lte: DateTime
+
+  """All values greater than the given value."""
+  updatedAt_gt: DateTime
+
+  """All values greater than or equal the given value."""
+  updatedAt_gte: DateTime
   items_every: OrderItemWhereInput
   items_some: OrderItemWhereInput
   items_none: OrderItemWhereInput
