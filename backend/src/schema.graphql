@@ -26,6 +26,7 @@ type Query {
   me: User
   users: [User]!
   order(id: ID!): Order
+  orders(orderBy: OrderOrderByInput): [Order]!
 }
 
 type User {
