@@ -31,12 +31,10 @@ class RemoveFromCart extends React.Component {
   update = (cache, payload) => {
     // The cache is the Apollo cache
     // The payload is the actual dump of information that is returned from the server
-    console.log('Running remove from cart update fn');
     // 1. First read the cache
     const data = cache.readQuery({
       query: CURRENT_USER_QUERY
     });
-    console.log(data);
     // 2. Remove that item from the cart
     // payload.data is what we are getting back from the server
     // inside of that we get removeFromCart Mutation
@@ -77,3 +75,4 @@ class RemoveFromCart extends React.Component {
 }
 
 export default RemoveFromCart;
+export { REMOVE_FROM_CART_MUTATION };
