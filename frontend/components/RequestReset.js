@@ -14,7 +14,7 @@ const REQUEST_RESET_MUTATION = gql`
 
 class RequestReset extends Component {
   state = {
-    password: ''
+    email: ''
   };
 
   saveToState = e => {
@@ -27,6 +27,7 @@ class RequestReset extends Component {
         {(reset, { error, loading, called }) => (
           <Form
             method="post"
+            data-test="form"
             onSubmit={async e => {
               e.preventDefault();
               await reset();
