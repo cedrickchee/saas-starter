@@ -30,7 +30,6 @@ describe('mocking learning', () => {
     // mock the fetchFavFoods function
     me.fetchFavFoods = jest.fn().mockResolvedValue(['burrito', 'salad']);
     const favFoods = await me.fetchFavFoods();
-    console.log(favFoods);
     expect(favFoods).toContain('salad');
   });
 });
