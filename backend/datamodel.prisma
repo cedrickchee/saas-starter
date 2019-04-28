@@ -8,7 +8,7 @@ enum Permission {
 }
 
 type User {
-  id: ID! @id
+  id: ID! @unique @id
   name: String!
   email: String! @unique
   password: String!
@@ -21,7 +21,7 @@ type User {
 }
 
 type Item {
-  id: ID! @id
+  id: ID! @unique @id
   title: String!
   description: String!
   image: String
@@ -33,14 +33,14 @@ type Item {
 }
 
 type CartItem {
-  id: ID! @id
+  id: ID! @unique @id
   quantity: Int! @default(value: 1)
   item: Item #relationship to Item
   user: User! #relationship to User
 }
 
 type OrderItem {
-  id: ID! @id
+  id: ID! @unique @id
   title: String!
   description: String!
   image: String!
@@ -51,7 +51,7 @@ type OrderItem {
 }
 
 type Order {
-  id: ID! @id
+  id: ID! @unique @id
   items: [OrderItem!]!
   total: Int!
   user: User!
