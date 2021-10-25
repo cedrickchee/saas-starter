@@ -1,5 +1,28 @@
 # SaaS Starter
 
+## Project Status
+
+The project has not been updated for a _very_ long time (aside from security
+fixes) for the latest in React 16+, Hooks, Apollo 3 and [Prisma
+2](https://www.prisma.io/docs/about/prisma/faq#since-prisma-20-is-released-will-prisma-1-still-be-maintained).
+
+## A message from the author
+
+> Maintaining an open source database requires an immense amount of time and
+> energy, even more so due to JS growing pains like dependency "hell",
+> non-backward compatible dependency upgrade or frequently breaking changes
+> introduced by third-party libraries.
+>
+> Unfortunately I no longer have the time or energy to continue this work.
+>
+> If you are interested in building better websites or looking for a simple and
+> better (maintainable) starter kit, I suggest that you look at the
+> [Remix](https://remix.run/) framework which will soon going open source and
+> check out Kent Dodds's post, ["How I built a modern website using Remix in
+> 2021"](https://kentcdodds.com/blog/how-i-built-a-modern-website-in-2021).
+> 
+> ~ [@cedric_chee](https://twitter.com/cedric_chee)
+
 demo: _coming soon_
 
 SaaS Starter is an open source full stack software-as-a-service online mart complete with real credit checkout. Users can search, sell, add to cart and checkout their favourite grocery items.
