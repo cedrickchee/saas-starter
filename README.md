@@ -31,7 +31,9 @@ This is a full stack JavaScript application built with [React.js](https://reactj
 
 ## The Tech Stack
 
-![](docs/images/tech_stack.png)
+![](docs/images/tech_stack_v2.png)
+
+_(WIP) New tech stack -- back-end will be updated to use Keystone headless CMS. Keystone uses Prisma under the hood to take care of the database layer)._
 
 ## Application Architecture
 
